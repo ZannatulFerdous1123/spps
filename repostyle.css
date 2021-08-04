@@ -1,0 +1,51 @@
+body{
+    background-color: rgba(255, 192, 203, 0.103);
+    font-family:'Times New Roman', Times, serif; 
+    font-size: 18px;;
+    line-height: 1.5em;
+    margin:auto;
+    
+
+}
+
+.contain{
+
+    background-color:rgba(255, 192, 203, 0.493);
+    border:solid pink;
+    width: 70%;
+    margin: auto;
+    padding:5px ;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+
+}
+
+h1{
+    text-align: center;
+    color:purple;
+}
+
+button{
+    padding: 5px;
+    width: 150px;
+    height: 50px;
+    border:solid rgba(221, 160, 221, 0.658);
+    border-radius: 25px;
+    background-color: pink;
+    font-size:18px;
+   
+}
+#box{
+    text-align: center;
+    
+}
+ image{
+     float: left;
+ }
+ul{
+    text-align:left;
+    float:right;
+    margin: auto;
+   
+}
