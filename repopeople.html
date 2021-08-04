@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Github Users</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Github Users</h1>
+     <section id="show"></section>
+     <div id="box">
+        <button id="loader">Load Github Users</button>
+     </div>
+    
+  
+    <script>
+        document.getElementById('loader').addEventListener('click',loadn);
+
+        function loadn(){
+            var xhr=new XMLHttpRequest();
+            xhr.open('GET','https://api.github.com/users');
+            xhr.onload=function(){
+                if(xhr.status==200){
+                    var people=JSON.parse(xhr.responseText);
+                    var display='';
+                    for(var i=0; i<5; i++){
+                   
+                    display +=
+                    '<div class="contain">'+
+                    '<img src="'+people[i].avatar_url+'"width="140px" height="140px">'+ 
+                    '<ul>'+
+                         '<li>Id:' + people[i].id+'</li>'+
+                         '<li>Login:'+ people[i].login+'</li>'+
+                         '<li>Github url:' + people[i].url+'</li>'+
+                         '<li>Repos:' + people[i].repos_url+'</li>'+
+                         '<li>Events:' + people[i].events_url +'</li>'+
+                   '</ul>'+
+                         '</div>'+
+                         '<br>';
+                         document.getElementById('show').innerHTML=display;
+                        
+                    
+                        }
+               }
+                    }
+                       
+                xhr.send();
+                }
+    </script>
+</body>
+</html>
